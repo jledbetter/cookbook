@@ -2,3 +2,4 @@
 .pydevproject
 *.py[co]
 sqlite3.db
+.settings/
