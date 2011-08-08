@@ -18,8 +18,8 @@ class Recipe(models.Model):
     added_by = models.ForeignKey(User)
     # this tells the model to automatically timestamp it when it is added
     date_added = models.DateField(auto_now_add=True, default=datetime.datetime.now)
-    instructions = models.CharField(max_length = 2000, blank = False, null = False)
-    ingredients = models.CharField(max_length = 1000)
+    instructions = models.TextField(max_length = 2000, blank = False, null = False)
+    ingredients = models.TextField(max_length = 1000)
     
     def __unicode__(self):
         return '%s' % self.title
