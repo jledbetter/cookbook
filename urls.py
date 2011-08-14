@@ -4,10 +4,13 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-
-    # Uncomment the admin/doc line below to enable admin documentation:
+    url(r'^$', 'recipes.views.homepage', name='homepage'),
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
+)
+
+urlpatterns += patterns('django.views.generic.simple',
+    url(r'^about-us/$', 'direct_to_template', {
+         'template': 'homepage/about-us.html',
+    }, name='about_us'),
 )
